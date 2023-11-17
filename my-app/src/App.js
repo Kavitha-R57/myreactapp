@@ -1,12 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+ 
+import React, { useState } from 'react'
 
-function App() {
+const App  = () => {
+  const [task, setTask] = useState([]);
+  const [taskInput, setTaskInput] = useState('');
+
+  const addTask  = () => {
+    if(taskInput.trim()!=='')
+    setTask([...task, setTaskInput]);
+    setTaskInput();
+    }
+    const
+
   return (
-    <div className="App">
-     <p>Hello World......</p>
+    <div>
+      <input type="text" value={taskInput} placeholder ="Enter your text" 
+      onChange={e =>setTaskInput(e.target.value)}
+      />
+      <button onClick={addTask}>Add</button>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
